@@ -56,7 +56,7 @@ body{
 }
 
 /* cards */
-.card{
+.listing-card{
     border: none !important;
 }
 
@@ -115,4 +115,9 @@ body{
 .show-card{
     padding-left: 0;
     padding-right: 0;
+}
+
+    #map {
+    height: 500px; 
+    width: 100%;
 }
