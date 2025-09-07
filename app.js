@@ -67,9 +67,9 @@ const sessionOptions = {
 }
 
 
-// app.get("/",(req,res)=>{
-//     res.send("Hi, I am root")
-// })
+app.get("/",(req,res)=>{
+    res.send("Hi, I am root")
+})
 
 app.use(session(sessionOptions));
 app.use(flash());
@@ -103,7 +103,7 @@ app.use("/listings/:id/reviews", reviewsRouter)
 app.use("/",userRouter);
 
 
-app.all("",(req,res,next)=>{
+app.all("*",(req,res,next)=>{
     next(new ExpressError(404, "page not found!"))
 })
 
