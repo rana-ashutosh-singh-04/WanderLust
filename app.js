@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname,"/public")))
 const store = MongoStore.create({
     mongoUrl: dbuRL,
     crypto:{
-      SECERET  : process.env.secret
+        secret: process.env.SECERET
     },
     touchAfter:24 * 36000,
 })
@@ -84,7 +84,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req,res,next)=>{
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
-    res.locals.currUser = req.user ;
+    res.locals.currUser = req.user;
     next();
 });
 
