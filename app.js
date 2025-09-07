@@ -68,7 +68,7 @@ const sessionOptions = {
 
 
 app.get("/",(req,res)=>{
-    res.send("Hi, I am root")
+    res.redirect("/listings")
 })
 
 app.use(session(sessionOptions));
@@ -114,6 +114,7 @@ app.use((err,req,res,next)=>{
     console.error(err.stack);
    res.render("error.ejs",{message})
 });
+
 
 app.listen(8080,()=>{
     console.log("server to the port 8080")
