@@ -1,7 +1,8 @@
 const multer = require("multer");
 const Listing = require("../models/listing");
 const e = require("connect-flash");
-const upload = multer({dest:'uploads/'})
+const { storage } = require("../cloudconfig");
+const upload = multer({ storage });
 const {mapping} = require('../mapping')
 
 module.exports.index = async(req,res)=>{
